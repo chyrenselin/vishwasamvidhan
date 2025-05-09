@@ -1,0 +1,967 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: #fffacd; /* Primordial Earth tone - will be layered under ::before */
+  color: #212121; /* Dark earthy text */
+  font-family: 'Philosopher', serif; /* Ancient wisdom font */
+  line-height: 1.8;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  overflow-x: hidden;
+  padding-top: 0;
+  word-wrap: break-word;
+  position: relative; /* Needed for z-index stacking with ::before */
+}
+
+/* Sacred Background Overlay (Ancient Scroll/Parchment with enhanced glow and texture hint) */
+body::before {
+   content: '';
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: radial-gradient(
+       circle at center,
+       rgba(255, 253, 208, 0.3) 0%,
+       rgba(255, 236, 179, 0.5) 20%,
+       rgba(255, 224, 130, 0.6) 50%,
+       rgba(255, 204, 128, 0.8) 80%,
+       rgba(215, 180, 130, 0.5) 95%,
+       rgba(180, 150, 100, 0.2) 100%
+   );
+   pointer-events: none;
+   z-index: -10;
+   filter: brightness(1.1) saturate(1.05);
+}
+
+
+/* Ensure all interactive elements have visible focus */
+:focus-visible {
+  outline: 3px solid #e65100;
+  outline-offset: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.3);
+}
+
+/* Hide outline for mouse users */
+body.using-mouse :focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* --- Animation Keyframes --- */
+@keyframes pulseZoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes pulseHeartBeat {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2); 
+    opacity: 0.9;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* --- Header Styles --- */
+header {
+  background: linear-gradient(
+    90deg,
+    #5d4037,
+    #795548
+  );
+  color: #ffecb3;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-family: 'Philosopher', serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  text-shadow: -1px -1px 1px #212121, 1px 1px 1px #a1887f;
+  border-bottom: 5px solid #3e2723;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+}
+
+/* --- Main Content Container --- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  background: transparent;
+  z-index: 1;
+}
+
+/* --- Hero Section Styles --- */
+.hero {
+  padding: 3rem 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-image-area {
+  flex: 1 1 300px;
+  max-width: 450px;
+  border: 10px solid #795548;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background-color: #a1887f;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.hero-image-area img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-width: 100%;
+  filter: sepia(30%) brightness(95%) contrast(105%);
+  transition: transform 0.6s ease-in-out, filter 0.6s ease-in-out;
+}
+
+.pulsing {
+  animation: pulseZoom 1.5s ease-in-out infinite;
+}
+
+.hero-content-area {
+  flex: 1 1 300px;
+  max-width: 500px;
+  text-align: left;
+  color: #3e2723;
+}
+
+.hero h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 0.8rem;
+  color: #e65100;
+  font-weight: 700;
+  line-height: 1.3;
+  font-family: 'Philosopher', serif;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  margin-bottom: 2rem;
+  color: #5d4037;
+}
+
+/* Button Styles */
+.button {
+  background-color: #8d6e63;
+  color: #ffecb3;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  display: inline-block; 
+  text-align: center;
+  min-width: 150px;
+  font-family: 'Philosopher', serif;
+  transform-origin: center center; 
+}
+
+.button:hover {
+  background-color: #6d4c41;
+  transform: translateY(-3px) scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.45); 
+}
+.button:active {
+  transform: translateY(0px) scale(0.96);   
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25); 
+}
+
+.button.green {
+  background-color: #66bb6a;
+  color: #3e2723;
+}
+.button.green:hover {
+  background-color: #43a047;
+}
+.button.green:active {
+  background-color: #388e3c;
+}
+
+.emoji-spin {
+  display: inline-block;
+  animation: spinSlow 5s linear infinite;
+  vertical-align: middle;
+}
+
+.emoji-pulse {
+  display: inline-block;
+  animation: pulseHeartBeat 0.5s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+
+/* Button Group Styles */
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.translate-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+#google_translate_element {
+  margin-right: 0;
+  vertical-align: middle;
+  display: none; 
+  flex-shrink: 0;
+  border: 1px solid #a1887f;
+  background-color: rgba(255, 253, 208, 0.3);
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transform-origin: center center;
+}
+#google_translate_element[style*='display: flex'] { 
+  display: flex !important;
+  align-items: center;
+}
+
+#google_translate_element select.goog-te-combo {
+  font-size: 1rem !important;
+  line-height: normal !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  padding: 0.2rem 0.5rem !important;
+  border: 1px solid #d7ccc8 !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  color: #3e2723 !important;
+  background-color: #fff8e1 !important;
+  display: inline-block !important;
+  min-height: 40px;
+  font-family: 'Philosopher', serif !important;
+}
+
+.goog-te-gadget a,
+.goog-logo-link,
+.goog-branding, 
+.goog-poweredby { 
+  display: none !important;
+  height: 0px !important;
+  overflow: hidden !important;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  vertical-align: middle;
+}
+
+#google_translate_element .goog-te-gadget-icon {
+  background-image: url('assets/google-logo.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 54px !important;
+  height: 54px !important;
+  vertical-align: middle !important;
+  margin-right: 5px !important;
+  animation: pulseHeartBeat 1.5s ease-in-out infinite; 
+  display: inline-block !important;
+}
+
+
+/* --- Section Styling --- */
+section {
+  background: transparent;
+  padding: 3rem 0;
+  margin: 0 auto;
+  border-bottom: 1px dashed rgba(62, 39, 35, 0.2);
+}
+section:last-of-type {
+  border-bottom: none;
+}
+
+.about-content-box {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background-color: #ffecb3;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  color: #3e2723;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  border: 2px solid #a1887f;
+}
+
+.about-content-box h3 {
+  color: #e65100;
+  font-size: clamp(1.5rem, 2.3vw, 1.7rem);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-family: 'Philosopher', serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about-content-box h3::before {
+  content: '📜';
+  margin-right: 0.8rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.about-content-box p {
+  margin-bottom: 1.2rem;
+  line-height: 1.9;
+}
+.about-content-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Constitution Content Section Styles --- */
+section#constitution-parts {
+  padding-top: 1rem;
+}
+
+.main-content-heading {
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #5d4037;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: 'Philosopher', serif;
+}
+
+.main-content-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff9800;
+  margin: 8px auto 0;
+  border-radius: 0;
+}
+
+.constitution-article {
+  background-color: #fff8e1;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1.5rem;
+  border: 1px solid #b89b45; /* Subtle border */
+}
+
+.constitution-article .article-title {
+  margin: 0 0 1.5rem 0; /* Adjusted margin */
+  padding: 0.8rem 1rem; /* Adjusted padding */
+  font-size: clamp(1.4rem, 2.3vw, 1.7rem);
+  color: #3e2723;
+  background-color: #b89b45; /* Re-using chapter header color */
+  font-weight: 700;
+  font-family: 'Philosopher', serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.constitution-article .content {
+  padding: 0.5rem; /* Content padding */
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: #212121;
+  background: transparent;
+  line-height: 1.7;
+}
+
+
+/* --- Constitution Content Specific Styles --- */
+.constitution-article .content hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 3px solid #5d4037;
+  opacity: 0.7;
+}
+
+.constitution-article .content ul,
+.constitution-article .content ol {
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0.8rem;
+}
+
+.constitution-article .content ul li,
+.constitution-article .content ol li {
+  margin-bottom: 0.8rem;
+}
+
+.constitution-article .content h4 {
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    color: #e65100;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+
+.constitution-article .content strong {
+  color: #e65100;
+  font-weight: 700;
+}
+
+/* --- Background Music Icon/Button --- */
+#stopMusicBtn {
+  background-color: #e57373;
+  color: #ffecb3;
+  display: none; /* Handled by JS */
+  min-width: auto;
+}
+#stopMusicBtn:hover {
+  background-color: #ef5350;
+}
+#stopMusicBtn:active {
+  background-color: #e53935;
+}
+
+/* --- Footer Styles --- */
+footer {
+  background: #3e2723;
+  color: #ffecb3;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-size: 1rem;
+  margin-top: 5rem;
+  line-height: 1.6;
+  position: relative; 
+  z-index: 1;
+}
+
+/* Helper class for accessibility: Visually hidden elements */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.7;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  }
+
+  header {
+    padding: 1.2rem 0.8rem;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+
+  .hero {
+    padding: 2.5rem 0;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .hero-image-area {
+    flex-basis: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    border-width: 8px;
+    padding: 4px;
+    border-radius: 15px;
+  }
+  .hero-image-area img {
+    border-radius: 8px;
+  }
+  .hero-content-area {
+    flex-basis: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .hero h2 {
+    margin-bottom: 0.6rem;
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+  }
+  .hero p {
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.6;
+  }
+
+  .button-group {
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  .translate-pair {
+    gap: 0.4rem;
+  }
+
+  .button {
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    padding: 0.7rem 1.5rem;
+    min-width: 130px;
+    border-radius: 6px;
+  }
+  #google_translate_element {
+    padding: 0.3rem 0.4rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .about-content-box {
+    padding: 1.5rem;
+    border-radius: 10px; 
+    border-width: 1px;
+  }
+  .about-content-box h3 {
+    font-size: clamp(1.3rem, 2.1vw, 1.5rem);
+    margin-bottom: 1rem;
+  }
+  .about-content-box h3::before {
+    font-size: 1.6rem;
+    margin-right: 0.6rem;
+  }
+  .about-content-box p {
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    line-height: 1.6;
+  }
+
+  .main-content-heading {
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+    margin-bottom: 2rem;
+  }
+  .main-content-heading::after {
+    width: 50px;
+    height: 2px; 
+    margin: 6px auto 0;
+  }
+
+  .constitution-article {
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+  }
+  .constitution-article .article-title {
+    font-size: clamp(1.3rem, 2.1vw, 1.5rem);
+    padding: 0.8rem 1rem;
+  }
+
+  .constitution-article .content {
+    font-size: clamp(0.9rem, 1.05vw, 1rem); 
+    padding: 0.3rem;
+    line-height: 1.6;
+  }
+  .constitution-article .content hr {
+    margin: 1.8rem 0;
+  }
+
+
+  footer {
+    padding: 1.5rem 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    line-height: 1.5;
+  }
+  header {
+    padding: 0.8rem 0.5rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+  .hero {
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+  .hero-image-area {
+    max-width: 90%;
+    border-width: 6px;
+    padding: 3px;
+  }
+  .hero-image-area img {
+    border-radius: 6px;
+  }
+
+  .hero-content-area {
+    padding: 0 0.5rem;
+  }
+  .hero h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    margin-bottom: 0.5rem;
+  }
+  .hero p {
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .button-group {
+    gap: 0.6rem;
+    margin-top: 1rem;
+    justify-content: center; 
+  }
+  .translate-pair {
+    gap: 0.3rem;
+  }
+
+  .button {
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    padding: 0.6rem 1.2rem;
+    min-width: 110px;
+    border-radius: 5px;
+  }
+  #google_translate_element {
+    padding: 0.2rem 0.4rem;
+  }
+  #google_translate_element select.goog-te-combo {
+    min-height: 30px; 
+    font-size: 0.9rem !important;
+    padding: 0.1rem 0.3rem !important;
+  }
+ #google_translate_element .goog-te-gadget-icon {
+    margin-right: 3px !important;
+    width: 28px !important; 
+    height: 28px !important;
+  }
+
+  section {
+    padding: 1.5rem 0;
+  }
+
+  .about-content-box {
+    padding: 1.2rem;
+    border-radius: 8px; 
+    border-width: 1px;
+  }
+  .about-content-box h3 {
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    margin-bottom: 0.8rem;
+  }
+  .about-content-box h3::before {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+  }
+  .about-content-box p {
+    font-size: clamp(0.85rem, 1.2vw, 0.95rem); 
+    line-height: 1.5;
+  }
+
+  .main-content-heading {
+    font-size: clamp(1.4rem, 2.6vw, 1.6rem);
+    margin-bottom: 1.5rem;
+  }
+  .main-content-heading::after {
+    width: 40px;
+    height: 2px;
+    margin: 5px auto 0;
+  }
+
+  .constitution-article {
+    margin-bottom: 1rem;
+    border-radius: 6px; 
+    padding: 1rem;
+  }
+
+  .constitution-article .article-title {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    padding: 0.7rem 0.9rem;
+  }
+
+  .constitution-article .content {
+    font-size: 0.85rem; 
+    padding: 0.2rem;
+    line-height: 1.4; 
+  }
+  .constitution-article .content hr {
+    margin: 1.5rem 0;
+    border-top-width: 2px; 
+  }
+  .constitution-article .content ul,
+  .constitution-article .content ol {
+    padding-left: 2rem; 
+    margin-bottom: 1rem;
+  }
+  .constitution-article .content ul li,
+  .constitution-article .content ol li {
+    margin-bottom: 0.5rem; 
+  }
+
+
+  footer {
+    padding: 1.5rem 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 4rem; 
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 0.9rem; 
+    line-height: 1.4;
+  }
+  header {
+    padding: 0.6rem 0.4rem;
+    font-size: 1.2rem; 
+  }
+  .hero {
+    padding: 1rem 0;
+    gap: 0.8rem;
+  }
+  .hero-image-area {
+    max-width: 95%;
+    border-width: 4px;
+    padding: 2px;
+  }
+  .hero-image-area img {
+    border-radius: 4px;
+  }
+
+  .hero-content-area {
+    padding: 0 0.5rem;
+  }
+  .hero h2 {
+    font-size: 1.1rem; 
+    margin-bottom: 0.4rem;
+  }
+  .hero p {
+    font-size: 0.85rem; 
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  .button-group {
+    flex-direction: column; 
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    align-items: stretch; 
+  }
+  .translate-pair {
+    width: 100%;
+    flex-wrap: wrap; 
+    gap: 0.2rem;
+    justify-content: center;
+  }
+  .translate-pair .button {
+    width: auto; 
+    flex-grow: 1; 
+    text-align: center;
+  }
+
+  .button {
+    width: 100%; 
+    min-width: auto; 
+    font-size: 0.8rem; 
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+  }
+  #google_translate_element {
+    width: auto; 
+    padding: 0.2rem 0.3rem;
+    margin: 0 auto; 
+  }
+  #google_translate_element select.goog-te-combo {
+    min-height: 28px;
+    font-size: 0.9rem !important; 
+    padding: 0.1rem 0.3rem !important;
+  }
+ #google_translate_element .goog-te-gadget-icon {
+    margin-right: 3px !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  section {
+    padding: 0.8rem 0;
+  }
+  .about-content-box,
+  .constitution-article { 
+    margin-bottom: 0.6rem;
+    border-radius: 4px;
+  }
+  .about-content-box {
+    padding: 0.8rem;
+  }
+  .about-content-box h3 {
+    font-size: 1rem; 
+    margin-bottom: 0.5rem;
+  }
+  .about-content-box h3::before {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+  .about-content-box p {
+    font-size: 0.85rem; 
+    line-height: 1.4;
+  }
+
+  .main-content-heading {
+    font-size: 1.1rem; 
+    margin-bottom: 0.8rem;
+  }
+  .main-content-heading::after {
+    width: 30px;
+    height: 2px;
+    margin: 4px auto 0;
+  }
+
+  .constitution-article { 
+    margin-bottom: 0.8rem;
+    border-radius: 5px; 
+    padding: 0.8rem;
+  }
+
+  .constitution-article .article-title {
+    font-size: 1.1rem; 
+    padding: 0.6rem 0.8rem;
+  }
+
+  .constitution-article .content {
+    font-size: 0.85rem; 
+    padding: 0.1rem;
+    line-height: 1.4;
+  }
+  .constitution-article .content hr {
+    margin: 1.5rem 0; 
+    border-top-width: 2px; 
+  }
+  .constitution-article .content ul,
+  .constitution-article .content ol {
+    padding-left: 2rem; 
+    margin-bottom: 1rem; 
+  }
+  .constitution-article .content ul li,
+  .constitution-article .content ol li {
+    margin-bottom: 0.5rem; 
+  }
+
+
+  footer {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.85rem; 
+    margin-top: 2rem; 
+  }
+}
+
+
+/* --- Google Translate Override Styles --- */
+
+iframe.goog-te-banner-frame,
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd { 
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.goog-tooltip,
+div[id^='goog-gt-tt'], 
+.VIpgJd-yAWNEb-tooltip, 
+#goog-gt-tt { 
+  display: none !important;
+  visibility: hidden !important;
+  position: absolute !important; 
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+font[style*="vertical-align: inherit;"], 
+.VIpgJd-yAWNEb-VIpgJd-fm, 
+.goog-text-highlight { 
+    background-color: transparent !important;
+    color: inherit !important; 
+    box-shadow: none !important;
+    border: none !important;
+    text-decoration: none !important; 
+}
+
+font[style*="vertical-align: inherit;"]:hover,
+.VIpgJd-yAWNEb-VIpgJd-fm:hover,
+font:hover { 
+    background-color: transparent !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+
+html body.translated-ltr,
+html body.translated-rtl,
+body { 
+  top: 0px !important;
+  min-height: 0 !important; 
+  position: relative !important; 
+}
