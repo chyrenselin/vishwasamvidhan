@@ -1,0 +1,1 @@
+Vishwa Samvidhan, World Constitution, Earth Constitution, Global Unity, Universal Rights, Planetary Ethics, Future of Humanity, Timeless Wisdom, Intergenerational Justice, Sacred Covenant, Divine Agreement, chyren selin
