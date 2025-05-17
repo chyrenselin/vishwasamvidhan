@@ -20,7 +20,7 @@ body {
     -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; /* Enable hyphenation where supported */
 }
 html.no-js .skip-link { display: none; } 
-.skip-link { position: absolute; top: -1000px; left: 1200px; background-color: var(--color-blue-primary); color: white; padding: 10px 15px; z-index: 9999; text-decoration: none; border-radius: 0 0 var(--border-radius) var(--border-radius); }
+.skip-link { position: absolute; top: -1000px; left: 1200px; background-color: var(--color-blue-secondary); color: white; padding: 10px 15px; z-index: 9999; text-decoration: none; border-radius: 0 0 var(--border-radius) var(--border-radius); }
 .skip-link:focus { top: 0; }
 :focus-visible { outline: 3px solid var(--color-accent-primary); outline-offset: 2px; border-radius: var(--border-radius); }
 body:not(.using-keyboard) :focus-visible { outline: none; }
