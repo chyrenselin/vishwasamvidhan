@@ -1,11 +1,11 @@
 // ============================================================================
-// Vishwa Samvidhan - Service Worker - v1.0
+// Vishwa Samvidhan - Service Worker - v2.9
 // Inspired by advanced caching strategies
 // ============================================================================
 
-const CACHE_NAME_STATIC = 'vishwa-samvidhan-static-v1.0'; // For app shell and core static assets
-const CACHE_NAME_DYNAMIC = 'vishwa-samvidhan-dynamic-v1.0'; // For dynamic content and API responses (if any)
-const CACHE_NAME_FONTS = 'vishwa-samvidhan-fonts-v1.0';   // For Google Fonts
+const CACHE_NAME_STATIC = 'vishwa-samvidhan-static-v2.9'; // For app shell and core static assets
+const CACHE_NAME_DYNAMIC = 'vishwa-samvidhan-dynamic-v2.9'; // For dynamic content and API responses (if any)
+const CACHE_NAME_FONTS = 'vishwa-samvidhan-fonts-v2.9';   // For Google Fonts
 
 const CORE_ASSETS_TO_CACHE = [
   './', // Represents index.html at the root
