@@ -1,0 +1,22 @@
+{
+  "name": "Vishwa Samvidhan: The Covenant of Earth",
+  "short_name": "VishwaSamvidhan",
+  "description": "Foundational principles for global harmony, human dignity, and planetary stewardship.",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#11233A",
+  "background_color": "#FBF8F3",
+  "icons": [
+    {
+      "src": "assets/fav-icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/fav-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

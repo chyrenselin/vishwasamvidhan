@@ -8,7 +8,7 @@
     <title>Vishwa Samvidhan: The Covenant of Earth – A Constitution for All Time</title>
     <meta name="description" content="Vishwa Samvidhan, The Covenant of Earth: Foundational principles for global harmony, human dignity, and planetary stewardship. A sacred constitution for all humanity, for all time.">
     <meta name="keywords" content="Vishwa Samvidhan, World Constitution, Earth Constitution, Global Unity, Universal Rights, Planetary Ethics, Future of Humanity, Timeless Wisdom, Intergenerational Justice, Sacred Covenant, Divine Agreement, chyren selin">
-    <meta name="author" content="The Collective Conscience of Humanity, Inspired by Divine Wisdom of Humanity)">
+    <meta name="author" content="The Collective Conscience of Humanity, Inspired by Divine Wisdom of Humanity">
     <meta name="generator" content="Timeless Wisdom Platform - Vishwa Samvidhan Manifestation">
 
     <!-- ☆ UNIVERSAL ACCESSIBILITY & APPEARANCE ☆ -->
@@ -32,7 +32,8 @@
     <!-- ☆ FONTS - The Voice of Clarity ☆ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
 
     <!-- ☆ STYLESHEET ☆ -->
     <link rel="stylesheet" href="style.css">
@@ -44,26 +45,64 @@
         <div class="header-content">
             <div class="logo-title-container">
                 <div class="logo-container">
-                    <!-- Inline SVG Logo: Seed sprouting, refined for clarity -->
-                    <svg class="site-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Vishwa Samvidhan Emblem" role="img">
+                    <!-- New Inline SVG Logo: Cosmic Seed/Mandala -->
+                    <svg class="site-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Vishwa Samvidhan Emblem: A central cosmic seed radiating sacred geometric patterns, symbolizing unity and universal order" role="img">
                         <defs>
-                            <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                                <stop offset="0%" style="stop-color:var(--color-accent-primary);stop-opacity:0.3" />
-                                <stop offset="100%" style="stop-color:var(--color-header-bg);stop-opacity:1" />
+                            <radialGradient id="logoBgGradient" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+                                <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.6"/>
+                                <stop offset="60%" stop-color="var(--color-header-bg)" stop-opacity="0.8"/>
+                                <stop offset="100%" stop-color="var(--color-header-bg)" stop-opacity="1"/>
                             </radialGradient>
+                            <filter id="logoGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <!-- Pattern for animation -->
+                            <g id="petal-group">
+                                <path d="M50 15 Q55 25 50 35 Q45 25 50 15Z" fill="var(--color-header-text)" opacity="0.85"/>
+                            </g>
                         </defs>
-                        <circle cx="50" cy="50" r="48" stroke="var(--color-accent-primary)" stroke-width="2" fill="url(#grad1)" />
-                        <path d="M50,15 Q60,30 50,45 M50,15 Q40,30 50,45" stroke="var(--color-header-text)" stroke-width="2.5" fill="none" transform="rotate(0 50 50)"/>
-                        <path d="M50,15 Q60,30 50,45 M50,15 Q40,30 50,45" stroke="var(--color-header-text)" stroke-width="2.5" fill="none" transform="rotate(120 50 50)"/>
-                        <path d="M50,15 Q60,30 50,45 M50,15 Q40,30 50,45" stroke="var(--color-header-text)" stroke-width="2.5" fill="none" transform="rotate(240 50 50)"/>
-                        <circle cx="50" cy="50" r="12" fill="var(--color-header-text)" opacity="0.2"/>
-                        <circle cx="50" cy="50" r="5" fill="var(--color-accent-primary)"/>
+
+                        <!-- Background Circle -->
+                        <circle class="logo-bg-circle" cx="50" cy="50" r="48" fill="url(#logoBgGradient)" stroke="var(--color-accent-primary)" stroke-width="1.5" filter="url(#logoGlow)" />
+
+                        <!-- Radiating Petal/Mandala Elements -->
+                        <g class="mandala-petals">
+                            <use href="#petal-group" transform="rotate(0 50 50)"/>
+                            <use href="#petal-group" transform="rotate(60 50 50)"/>
+                            <use href="#petal-group" transform="rotate(120 50 50)"/>
+                            <use href="#petal-group" transform="rotate(180 50 50)"/>
+                            <use href="#petal-group" transform="rotate(240 50 50)"/>
+                            <use href="#petal-group" transform="rotate(300 50 50)"/>
+                        </g>
+
+                         <!-- Inner Radiance (subtler than petals) -->
+                        <g class="inner-radiance" opacity="0.5">
+                            <use href="#petal-group" transform="rotate(30 50 50) scale(0.7)" />
+                            <use href="#petal-group" transform="rotate(90 50 50) scale(0.7)" />
+                            <use href="#petal-group" transform="rotate(150 50 50) scale(0.7)" />
+                            <use href="#petal-group" transform="rotate(210 50 50) scale(0.7)" />
+                            <use href="#petal-group" transform="rotate(270 50 50) scale(0.7)" />
+                            <use href="#petal-group" transform="rotate(330 50 50) scale(0.7)" />
+                        </g>
+
+                        <!-- Central Seed/Dot with subtle animation -->
+                        <circle class="logo-center-dot" cx="50" cy="50" r="7" fill="var(--color-accent-primary)" stroke="var(--color-header-text)" stroke-width="1" opacity="0.95"/>
+                        <circle class="logo-center-glow" cx="50" cy="50" r="4" fill="var(--color-header-text)" opacity="0.7"/>
+
                     </svg>
                 </div>
                 <div class="title-container">
-                    <h1>Vishwa Samvidhan: The Covenant of <span class="highlight-earth">Earth</span></h1>
+                    <h1>
+                      <span class="title-line-1">Vishwa Samvidhan:</span>
+                      <span class="title-line-2">The Covenant of <span class="highlight-earth">Earth</span></span>
+                    </h1>
                     <p class="subtitle">A Sacred Constitution for All Time & All Beings</p>
                 </div>
+                
             </div>
             <div class="header-actions-container"> <!-- Renamed for clarity -->
                  <div class="button-group">
@@ -605,7 +644,7 @@
                 <p>Let this Vishwa Samvidhan, this Covenant of Earth, be more than words; let it be the rhythm of our hearts, the wisdom in our actions, the legacy we gift to the infinite tomorrows.</p>
                 <p>Sealed not by power, but by the unified will of a species choosing enlightenment over discord, love over fear, and life abundant for all.</p>
                 <p>May the stars bear witness, and may every sunrise renew our sacred pledge.</p>
-                <p><span class="signature-mark">~ The Awakened Consciousness of Earth, Manifest Through Its Peoples</span></p>
+                <p><span class="signature-mark">~ The Awakened Consciousness of Earth, Manifest Through Its Peoples.</span></p>
             </blockquote>
         </section>
 
