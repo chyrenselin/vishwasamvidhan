@@ -1,10 +1,10 @@
 // ============================================================================
-// Vishwa Samvidhan - Service Worker - v3.4
+// Vishwa Samvidhan - Service Worker - v3.1
 // Updated with Stale While Revalidate strategy for better updates.
 // Ensure you update the CACHE_NAME below whenever you deploy new code!
 // ============================================================================
 
-const CACHE_NAME = 'vishwa-samvidhan-cache-v3.0'; // <-- !!! UPDATE THIS STRING !!! Increment this whenever you change ANYTHING you want cached (HTML, CSS, JS, images etc.)
+const CACHE_NAME = 'vishwa-samvidhan-cache-v3.1'; // <-- !!! UPDATE THIS STRING!!! Increment this whenever you change ANYTHING you want cached (HTML, CSS, JS, images etc.)
 
 // List of core files to cache during installation. This is primarily for
 // ensuring basic offline access from the very first load of the new SW.
